@@ -54,7 +54,7 @@
       <h2> <?= PRODUCTO ?> </h2>
       <p class="descripcion"><?= DESC_PRODUCTO ?></p>
       <p class="precio">Precio: <?= number_format($precio, 2, ',') . MONEDA ?></p>
-      <p class="precio">IVA (21%): <?= number_format($iva_producto, 2, ',') . MONEDA ?></p>
+      <p class="precio">IVA (<?= IVA * 100 ?>%): <?= number_format($iva_producto, 2, ',') . MONEDA ?></p>
       <p class="total">TOTAL: <?= number_format($total, 2, ',') . MONEDA ?></p>
       <p class="precio">PRECIO SOCIOS (6.7%): <?= number_format($total_socio, 2, ',') . MONEDA ?></p>
 
