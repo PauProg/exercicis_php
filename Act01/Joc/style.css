@@ -1,0 +1,126 @@
+/* Gran parte del CSS ha sido con ayuda de la IA */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Google Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  padding: 5rem 1.5rem;
+  color: #f4f1ea;
+  background: #111116;
+}
+
+body > h1,
+body > p,
+.ficha {
+  width: min(100%, 34rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+body > h1 {
+  color: #f5c451;
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+body > p {
+  margin-top: 0.75rem;
+  color: #aaa8b0;
+  font-size: 1rem;
+}
+
+.ficha {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid #34343e;
+  border-radius: 1rem;
+  background: #202027;
+  box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 25%);
+}
+
+.ficha h2 {
+  color: #ffffff;
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.ficha > p {
+  margin-top: 0.5rem;
+  color: #aaa8b0;
+  font-size: 1rem;
+}
+
+.numeros {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.barraVida,
+.barraFuerza {
+  margin-top: 2rem;
+}
+
+.barraFuerza {
+  margin-top: 1.25rem;
+}
+
+.barraVida p,
+.barraFuerza p {
+  margin-bottom: 0.5rem;
+  color: #f4f1ea;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.barra {
+  height: 14px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: hsl(240, 15%, 25%);
+}
+
+.barra span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.barra .vida {
+  background: #c2661f;
+}
+
+.barra .fuerza {
+  background: #02736f;
+}
+
+.stats {
+  margin: 2em 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.separador {
+  width: 100%;
+  height: 1px;
+  border: 1px dashed hsl(240, 15%, 20%);
+  margin: .5em 0;
+}
+
+p.tag {
+  color: hsl(24, 65%, 40%);
+  background-color: hsl(27, 80%, 94%);
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 700;
+}
