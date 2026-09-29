@@ -35,6 +35,76 @@ if (array_key_exists($columna, $estudiantes[0])) {
   echo "<p>La columna $columna existe en el array 'estudiantes'</p>";
 }
 
+// sort — Ordena un array en orden creciente
+/*
+  He creado una array indexado porque sino, al ordenar una
+  fila del array asociativo, luego da error al crear la
+  tabla
+*/
+
+$frutas = ["Poma", "Pera", "Mandarina", "Enric"];
+sort($frutas);
+foreach ($frutas as $f) {
+  echo $f . " ";
+}
+
+echo "<br>";
+
+// rsort — Ordena un array en orden decreciente
+rsort($frutas);
+foreach ($frutas as $f) {
+  echo $f . " ";
+}
+
+echo "<br>";
+
+// ksort — Ordena un array según las claves en orden ascendente
+$estudiante = $estudiantes[1];
+ksort($estudiante);
+foreach ($estudiante as $key => $val) {
+  echo "$key -> $val, ";
+}
+
+echo "<br>";
+
+// array_sum — Calcula la suma de los valores del array
+$nums = [6, 7, 2, 3];
+echo 'Suma -> ' . array_sum($nums);
+
+echo "<br>";
+
+// max — El valor más grande
+echo 'Máximo -> ' . max($nums);
+
+echo "<br>";
+
+// min — El valor más pequeño
+echo 'Mínimo -> ' . min($nums);
+
+echo '<br>';
+
+// array_column — Devuelve los valores de una columna de un array de entrada
+$nombres = array_column($estudiantes, 'nombre');
+print_r($nombres);
+
+echo '<br>';
+
+// implode — Une elementos de un array en un string
+echo implode(", ", $frutas);
+
+echo '<br>';
+
+// explode — Divide una string en segmentos
+$datos = "pau,19,daw2,polinya,piano";
+$datos_separados = explode(",", $datos);
+foreach ($datos_separados as $d) {
+  echo $d . "<br>";
+}
+
+/*
+implode(', ', $a) / explode
+*/
+
 ?>
 
 <!DOCTYPE html>
