@@ -101,10 +101,6 @@ foreach ($datos_separados as $d) {
   echo $d . "<br>";
 }
 
-/*
-implode(', ', $a) / explode
-*/
-
 ?>
 
 <!DOCTYPE html>
