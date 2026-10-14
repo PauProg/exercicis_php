@@ -1,0 +1,301 @@
+:root {
+  --ink: #f7f9ff;
+  --muted: #aeb8cc;
+  --glass: rgba(255, 255, 255, 0.11);
+  --glass-input: rgba(5, 12, 28, 0.3);
+  --line: rgba(255, 255, 255, 0.2);
+  --accent: #6ea2ff;
+  --accent-dark: #8bb7ff;
+  --night: #0b1020;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes content-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.8rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes button-shine {
+  from {
+    transform: translateX(-140%);
+  }
+  to {
+    transform: translateX(140%);
+  }
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  color: var(--ink);
+  background-color: var(--night);
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(91, 126, 255, 0.25), transparent 25rem),
+    radial-gradient(circle at 85% 90%, rgba(47, 190, 190, 0.12), transparent 22rem),
+    linear-gradient(135deg, #0b1020 0%, #19243d 52%, #0a111e 100%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 4px);
+  background-blend-mode: screen, screen, normal, soft-light;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+
+main {
+  width: min(100%, 34rem);
+  padding: clamp(1.75rem, 5vw, 3rem);
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: 1.75rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  -webkit-backdrop-filter: blur(24px) saturate(135%);
+  backdrop-filter: blur(24px) saturate(135%);
+  animation: panel-in 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.result-page main {
+  width: min(100%, 42rem);
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  font-size: clamp(2rem, 7vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1;
+  animation: content-in 550ms 100ms ease-out both;
+}
+
+.intro {
+  margin: 0 0 2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  animation: content-in 550ms 180ms ease-out both;
+}
+
+form {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+  animation: content-in 550ms ease-out both;
+}
+
+.field:nth-child(1) {
+  animation-delay: 260ms;
+}
+
+.field:nth-child(2) {
+  animation-delay: 340ms;
+}
+
+.field:nth-child(3) {
+  animation-delay: 420ms;
+}
+
+label,
+h2 {
+  color: #d8dfef;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  color: var(--ink);
+  background: var(--glass-input);
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  font: 1rem -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(7, 15, 35, 0.48);
+  box-shadow: 0 0 0 4px rgba(110, 162, 255, 0.16);
+  transform: translateY(-1px);
+}
+
+button,
+a {
+  position: relative;
+  overflow: hidden;
+  color: #07132d;
+  background: linear-gradient(180deg, #8bb7ff 0%, var(--accent) 100%);
+  border-radius: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: filter 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+}
+
+button {
+  margin-top: 0.5rem;
+  padding: 0.95rem 1.2rem;
+  border: 0;
+  cursor: pointer;
+  font: 700 0.95rem -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  box-shadow: 0 0.7rem 1.5rem rgba(51, 112, 232, 0.25);
+  animation: content-in 550ms 500ms ease-out both;
+}
+
+button::after,
+a::after {
+  position: absolute;
+  inset: 0 auto 0 -30%;
+  width: 18%;
+  content: "";
+  background: rgba(255, 255, 255, 0.5);
+  filter: blur(0.7rem);
+  transform: translateX(-140%) skewX(-18deg);
+}
+
+button:hover::after,
+a:hover::after {
+  animation: button-shine 700ms ease-out;
+}
+
+button:hover,
+a:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 0.9rem 1.8rem rgba(51, 112, 232, 0.35);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(139, 183, 255, 0.45);
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  margin: 0 0 0.7rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  animation: content-in 500ms 100ms ease-out both;
+}
+
+.confirmation-page h1,
+.confirmation-page ul,
+.confirmation-page p,
+.confirmation-page li {
+  animation: content-in 550ms 160ms ease-out both;
+}
+
+.confirmation-page h1 {
+  width: min(100%, 42rem);
+  margin-right: auto;
+  margin-left: auto;
+  padding: clamp(1.75rem, 5vw, 3rem) clamp(1.75rem, 5vw, 3rem) 0;
+}
+
+.confirmation-page ul {
+  width: min(100%, 42rem);
+  margin: 1.5rem auto;
+  padding: 1rem;
+  list-style: none;
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(24px) saturate(135%);
+  backdrop-filter: blur(24px) saturate(135%);
+}
+
+.confirmation-page li {
+  padding: 0.85rem 1rem;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.confirmation-page li:last-child {
+  border-bottom: 0;
+}
+
+.confirmation-page p {
+  width: min(100%, 42rem);
+  margin: 1rem auto;
+  color: var(--muted);
+  text-align: center;
+}
+
+.data-block {
+  margin: 0 0 1rem;
+  animation: content-in 550ms 300ms ease-out both;
+}
+
+h2 {
+  margin: 0 0 0.5rem;
+}
+
+pre {
+  min-height: 3.5rem;
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  color: #dce7ff;
+  background: var(--glass-input);
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  font: 0.9rem/1.6 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.data-block:hover pre {
+  background: rgba(7, 15, 35, 0.42);
+  border-color: rgba(139, 183, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+a {
+  display: inline-flex;
+  margin-top: 1rem;
+  padding: 0.85rem 1.1rem;
+  font-size: 0.95rem;
+  animation: content-in 550ms 500ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
+  }
+}

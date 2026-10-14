@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulari</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1>Inscripció al festival</h1>
+    <p class="intro">Reserva la teva plaça i vine a gaudir de la música en directe.</p>
+
+    <!-- action: on van les dades -->
+    <!-- method: com hi van (GET o POST) -->
+    <form action="pas2-resultat.php" method="post">
+      <div class="field">
+        <label for="nom">Nom</label>
+        <input type="text" name="nom" id="nom" autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="correu">Correu</label>
+        <input type="email" name="correu" id="correu" autocomplete="email">
+      </div>
+
+      <div class="field">
+        <label for="dia">Dia</label>
+        <select name="dia" id="dia">
+          <option value="divendres">Divendres</option>
+          <option value="dissabte">Dissabte</option>
+        </select>
+      </div>
+
+      <button type="submit">Inscriure’m</button>
+    </form>
+  </main>
+
+</body>
+</html>
