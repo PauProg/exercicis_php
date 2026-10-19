@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+	--background: #0b0e12;
+	--surface: rgba(22, 27, 33, 0.76);
+	--surface-solid: #151a20;
+	--text: #f1f2ed;
+	--muted: #929ba3;
+	--faint: rgba(241, 242, 237, 0.12);
+	--line: rgba(241, 242, 237, 0.18);
+	--mint: #b9e8c2;
+	--blue: #93c7e8;
+	--coral: #ee886f;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100%;
+}
+
+@keyframes reveal {
+	from { opacity: 0; transform: translateY(1rem); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes drift {
+	from { transform: translate3d(-2%, -1%, 0) scale(1); }
+	to { transform: translate3d(2%, 1%, 0) scale(1.06); }
+}
+
+body.festival-page {
+	position: relative;
+	min-height: 100vh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 7rem 1.25rem 4rem;
+	overflow-x: hidden;
+	color: var(--text);
+	background-color: var(--background);
+	background-image:
+		linear-gradient(125deg, rgba(147, 199, 232, 0.06), transparent 36%),
+		radial-gradient(circle at 16% 18%, rgba(185, 232, 194, 0.13), transparent 25rem),
+		radial-gradient(circle at 88% 78%, rgba(238, 136, 111, 0.11), transparent 23rem),
+		repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 6px),
+		repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.016) 0 1px, transparent 1px 4px),
+		radial-gradient(circle, rgba(255, 255, 255, 0.055) 0 0.7px, transparent 0.8px);
+	background-size: auto, auto, auto, auto, auto, 5px 5px;
+	font-family: 'Manrope', sans-serif;
+}
+
+body.festival-page::before,
+body.festival-page::after {
+	position: fixed;
+	z-index: -1;
+	content: '';
+	pointer-events: none;
+}
+
+body.festival-page::before {
+	top: -12rem;
+	right: -8rem;
+	width: 34rem;
+	height: 34rem;
+	border: 1px solid rgba(185, 232, 194, 0.14);
+	border-radius: 50%;
+	box-shadow: 0 0 0 4rem rgba(185, 232, 194, 0.025), 0 0 0 8rem rgba(185, 232, 194, 0.02);
+	animation: drift 16s ease-in-out infinite alternate;
+}
+
+body.festival-page::after {
+	inset: 0;
+	background: linear-gradient(90deg, transparent 0 49.8%, rgba(255, 255, 255, 0.035) 50%, transparent 50.2%);
+	opacity: 0.35;
+}
+
+.festival-heading {
+	width: min(100%, 37rem);
+	margin-bottom: 1.4rem;
+	animation: reveal 600ms ease-out both;
+}
+
+.festival-title {
+	margin: 0;
+	color: var(--text);
+	font: 600 clamp(2rem, 5vw, 3.25rem)/0.98 'Space Grotesk', sans-serif;
+	letter-spacing: -0.065em;
+}
+
+.festival-title span {
+	color: var(--mint);
+}
+
+.festival-subtitle {
+	margin: 0.8rem 0 0;
+	color: var(--muted);
+	font: 0.63rem 'DM Mono', monospace;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.festival-form,
+.confirmation {
+	width: min(100%, 37rem);
+	border: 1px solid var(--line);
+	border-radius: 1rem;
+	-webkit-backdrop-filter: blur(1.5rem);
+	backdrop-filter: blur(1.5rem);
+}
+
+.festival-form {
+	position: relative;
+	padding: clamp(1.6rem, 5vw, 3rem);
+	overflow: hidden;
+	background-color: var(--surface);
+	background-image:
+		linear-gradient(120deg, rgba(185, 232, 194, 0.045), transparent 35%),
+		repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.018) 0 1px, transparent 1px 4.5rem),
+		repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.014) 0 1px, transparent 1px 4.5rem);
+	box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+	animation: reveal 700ms 100ms ease-out both;
+}
+
+.festival-form::before {
+	position: absolute;
+	top: 0;
+	left: 12%;
+	width: 76%;
+	height: 1px;
+	content: '';
+	background: linear-gradient(90deg, transparent, var(--mint), transparent);
+	opacity: 0.8;
+}
+
+.form-kicker,
+.confirmation-kicker {
+	margin: 0;
+	color: var(--mint);
+	font: 500 0.65rem 'DM Mono', monospace;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.form-kicker::after {
+	display: block;
+	width: 2.5rem;
+	height: 2px;
+	margin-top: 0.85rem;
+	content: '';
+	background: var(--coral);
+}
+
+.form-intro {
+	margin: 0.8rem 0 1.8rem;
+	color: var(--muted);
+	font-size: 0.85rem;
+}
+
+.form-fields {
+	display: block;
+}
+
+.form-label {
+	display: block;
+	margin: 1rem 0 0.45rem;
+	color: var(--muted);
+	font-size: 0.72rem;
+	font-weight: 600;
+}
+
+.form-input {
+	width: 100%;
+	min-height: 3rem;
+	padding: 0.75rem 0.85rem;
+	color: var(--text);
+	background-color: rgba(5, 8, 11, 0.28);
+	background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.025), transparent 42%);
+	border: 1px solid var(--faint);
+	border-radius: 0.45rem;
+	outline: none;
+	font: 0.86rem 'Manrope', sans-serif;
+	transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.form-input:hover {
+	border-color: rgba(147, 199, 232, 0.5);
+}
+
+.form-input:focus {
+	background: rgba(5, 8, 11, 0.5);
+	border-color: var(--mint);
+	box-shadow: 0 0 0 3px rgba(185, 232, 194, 0.1);
+	transform: translateY(-1px);
+}
+
+.form-select option {
+	color: var(--text);
+	background: var(--surface-solid);
+}
+
+.form-button {
+	width: 100%;
+	min-height: 3.3rem;
+	margin-top: 2rem;
+	padding: 0.9rem 1rem;
+	color: #111714;
+	background: linear-gradient(110deg, var(--mint), #d7e8c4 65%, var(--blue));
+	border: 0;
+	border-radius: 0.45rem;
+	cursor: pointer;
+	font: 700 0.84rem 'Manrope', sans-serif;
+	text-align: left;
+	transition: box-shadow 180ms ease, transform 180ms ease, filter 180ms ease;
+}
+
+.form-button span {
+	float: right;
+	font-size: 1.2rem;
+	line-height: 0.8;
+}
+
+.form-button:hover {
+	filter: brightness(1.08);
+	box-shadow: 0 0.7rem 1.5rem rgba(185, 232, 194, 0.16);
+	transform: translateY(-2px);
+}
+
+.form-button:focus-visible {
+	outline: 2px solid var(--coral);
+	outline-offset: 3px;
+}
+
+.form-footnote {
+	margin: 1rem 0 0;
+	color: var(--muted);
+	font: 0.6rem 'DM Mono', monospace;
+	text-align: center;
+}
+
+.form-footnote span {
+	color: var(--coral);
+}
+
+.confirmation {
+	order: -1;
+	margin-bottom: 1rem;
+	padding: 1rem 1.2rem;
+	background: rgba(185, 232, 194, 0.09);
+	border-color: rgba(185, 232, 194, 0.3);
+	animation: reveal 600ms ease-out both;
+}
+
+.confirmation-kicker {
+	margin-bottom: 0.55rem;
+	color: var(--coral);
+}
+
+.confirmation-title {
+	margin: 0;
+	color: var(--text);
+	font: 600 1.1rem 'Space Grotesk', sans-serif;
+}
+
+.confirmation-data {
+	margin: 0.45rem 0 0;
+	color: var(--muted);
+	font: 0.68rem/1.6 'DM Mono', monospace;
+}
+
+@media (max-width: 38rem) {
+	body.festival-page {
+		padding: 3.5rem 0.85rem 2rem;
+	}
+
+	.festival-heading {
+		margin-bottom: 1rem;
+	}
+
+	.festival-title {
+		font-size: 2rem;
+	}
+
+	.form-fields {
+		display: block;
+	}
+
+	.form-label {
+		margin-top: 1rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation: none !important;
+		transition-duration: 0.01ms !important;
+	}
+}
