@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ampitazas - Registro</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <main>
+    <form action="process.php" method="post">
+      <div class="form-head">
+        <img src="./src/assets/ampitaza-logo.webp" alt="Logo de ampitazas">
+        <h1>Registrate</h1>
+        <p>(Si pones que te llamas Ampeter hay sorpresa)</p>
+      </div>
+
+      <fieldset>
+        <legend>Datos personales</legend>
+
+        <label for="name">
+          Nombre
+          <input type="text" name="name" id="name" placeholder="John">
+        </label>
+
+        <label for="surnames">
+          Apellidos
+          <input type="text" name="surnames" id="surnames" placeholder="Doe Does">
+        </label>
+
+        <label for="birthdate">
+          Fecha de nacimiento
+          <input type="date" name="birthdate" id="birthdate">
+        </label>
+
+        <label for="phone">
+          Teléfono
+          <input type="tel" name="phone" id="phone" placeholder="678 901 234">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Datos de la cuenta</legend>
+
+        <label for="email">
+          Correo
+          <input type="email" name="email" id="email" placeholder="johndoe@email.com">
+        </label>
+
+        <label for="email">
+          Repetir Correo
+          <input type="email" name="rep-email" id="rep-email" placeholder="johndoe@email.com">
+        </label>
+
+        <label for="username">
+          Nombre de usuario
+          <input type="text" name="username" id="username" placeholder="johndoee_">
+        </label>
+
+        <label for="pass">
+          Contraseña
+          <input type="password" name="pass" id="pass">
+        </label>
+        
+        <label for="rep-pass">
+          Repetir Contraseña
+          <input type="password" name="rep-pass" id="rep-pass">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Dirección</legend>
+
+        <label for="street">
+          Calle y número
+          <input type="text" name="street" id="street" placeholder="Carrer de Lacy, 34">
+        </label>
+
+        <label for="city">
+          Población
+          <input type="text" name="city" id="city" placeholder="Sabadell">
+        </label>
+
+        <label for="postal-code">
+          Código postal
+          <input type="text" name="postal-code" id="postal-code" placeholder="08202">
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Preferencias</legend>
+
+        <label for="type">
+          Tipo de cliente
+          <select name="type" id="type">
+            <option value="">---</option>
+            <option value="ampeter-fan">Fan de ampeter</option>
+            <option value="ampeter-lover">Enamorado de ampeter</option>
+            <option value="ampeter-stalker">Acosador de ampeter</option>
+          </select>
+        </label>
+
+        <div class="how-found-us-radio">
+          <p>¿Cómo nos has conocido?</p>
+
+          <label>
+            <input type="radio" name="how-found-us" value="instagram">
+            Instagram
+          </label>
+
+          <label>
+            <input type="radio" name="how-found-us" value="tiktok">
+            TikTok
+          </label>
+
+          <label>
+            <input type="radio" name="how-found-us" value="youtube">
+            Yutub
+          </label>
+
+          <label>
+            <input type="radio" name="how-found-us" value="friend">
+            Un amigo o amiga
+          </label>
+
+          <label>
+            <input type="radio" name="how-found-us" value="other">
+            Otro
+          </label>
+        </div>
+
+        <label for="accept-bulletin">
+          <input type="checkbox" name="accept-bulletin" id="accept-bulletin" value="yes">
+          Acepto recibir promociones y ofertas de Ampitazas, además de envíos periodicos de fotos provocativas de ampeterby7.
+        </label>
+
+        <label for="accept-conditions">
+          <input type="checkbox" name="accept-conditions" id="accept-conditions" value="yes">
+          He leido y acepto las condiciones de uso y ns que más.
+        </label>
+      </fieldset>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+</body>
+</html>
