@@ -15,9 +15,13 @@ if (!isset($pageTitle)) {
 <body>
 
   <header class="site-header">
-    <img src="./src/assets/ampitaza-logo.webp" alt="Logo de <?= SHOP_NAME ?>">
-    <h1><?= SHOP_NAME ?></h1>
-    <p><?= SHOP_SLOGAN ?></p>
+    <div class="site-header__inner">
+      <img src="./src/assets/ampitaza-logo.webp" alt="Logo de <?= SHOP_NAME ?>">
+      <div class="site-header__text">
+        <h1><?= SHOP_NAME ?></h1>
+        <p><?= SHOP_SLOGAN ?></p>
+      </div>
+    </div>
   </header>
 
   <main>

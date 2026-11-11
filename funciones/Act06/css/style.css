@@ -53,25 +53,43 @@ body {
 }
 
 .site-header {
+  border-bottom: var(--border) solid var(--border-dark);
+  background-color: var(--bg-dark);
+}
+
+.site-header__inner {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: var(--space-1);
-  padding: var(--space-6) var(--space-4) 0;
-  text-align: center;
+  gap: var(--space-3);
+  width: min(100%, 72rem);
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-4);
 }
 
 .site-header img {
-  width: 100px;
-  margin-bottom: var(--space-2);
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.site-header__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.site-header h1 {
+  font-size: 1.5rem;
+  line-height: 1.2;
 }
 
 .site-header p {
-  font-size: var(--subtitle);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
 }
 
 .site-footer {
-  padding: var(--space-6) var(--space-4);
+  padding: var(--space-4);
   border-top: var(--border) solid var(--border-dark);
   background-color: var(--bg-dark);
   text-align: center;
@@ -125,6 +143,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+  list-style: none;
   padding: var(--space-3) var(--space-6) var(--space-6);
   border: var(--border) solid var(--border-dark);
   border-top: none;
@@ -229,6 +248,11 @@ form {
   border-radius: var(--border-rad);
   border: var(--border) solid var(--border-dark);
   box-shadow: 0 1rem 2rem hsla(150, 14%, 20%, 0.08);
+}
+
+.form-title {
+  width: 100%;
+  text-align: center;
 }
 
 form fieldset {

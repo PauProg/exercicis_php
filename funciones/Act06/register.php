@@ -1,14 +1,14 @@
 <?php
 require_once 'config.php';
 
-$pageTitle = 'Regístrate';
+$pageTitle = 'Registrate';
 
 require 'header.php';
 ?>
 
-  <h2>Regístrate</h2>
-
   <form action="process.php" method="post">
+    <h2 class="form-title">Registrate</h2>
+
     <fieldset>
       <legend>Datos personales</legend>
 
